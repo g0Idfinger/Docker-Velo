@@ -1,0 +1,6 @@
+traefik2/traefik.log
+velociraptor/
+traefik2/acme/
+*-velo/
+*-velo
+shared/

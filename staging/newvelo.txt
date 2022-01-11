@@ -1,0 +1,36 @@
+###############
+  CUSTOMER:
+    container_name:  CUSTOMER
+    #image: wlambert/velociraptor
+    build:
+      context: $DOCKERDIR/containers/CUSTOMER
+      dockerfile: $DOCKERDIR/containers/CUSTOMER/Dockerfile
+    networks:
+      - t2_proxy
+    volumes:
+      - $DOCKERDIR/containers/CUSTOMER:/velociraptor/:rw
+      #- $DOCKERDIR/velociraptor-artifacts:/velociraptor/artifact_definitions/:rw #used for custom artifact definitions
+    environment:
+      #- VELOX_USER=${VELOX_USER}
+      #- VELOX_PASSWORD=${VELOX_PASSWORD}
+      #- VELOX_ROLE=${VELOX_ROLE}
+      - VELOX_SERVER_URL=https://CUSTOMER.${DOMAINNAME}/
+      - VELOX_FRONTEND_HOSTNAME=CUSTOMER.${DOMAINNAME}
+    #ports:
+    #  - "2083:2083"
+    #  - "2087:2087"
+    #  - "8889:8889"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      ## HTTP Routers
+      - "traefik.http.routers.CUSTOMER-rtr.entrypoints=https"
+      - "traefik.http.routers.CUSTOMER-rtr.rule=Host(`CUSTOMER.${DOMAINNAME}`)"
+      - "traefik.http.routers.CUSTOMER-rtr.tls=true"
+      ## Middlewares
+    #  - "traefik.http.routers.CUSTOMER-rtr.middlewares=middlewares-basic-auth@file"
+    #  - "traefik.http.middlewares.add-CUSTOMER.addPrefix.prefix=/app/index.html"
+      ## HTTP Services
+      - "traefik.http.routers.CUSTOMER-rtr.service=CUSTOMER-svc"
+      - "traefik.http.services.CUSTOMER-svc.loadbalancer.server.port=8889"
+        #   - "traefik.http.services.CUSTOMER-svc.loadbalancer.server.scheme=https"
