@@ -10,7 +10,7 @@ Credit to [weslambert](https://github.com/weslambert/velociraptor-docker) for th
 
 #### Configuration:
 ##### This installs all dependacies and Docker/Docker Compose.
-1. `cd /velo-deploy/scripts`
+1. `cd /docker-velo/scripts`
 2. run `./install.sh` # WILL PROMPT FOR SUDO PASSWORD IF NEEDED
 3. Script will prompt you for Domain Name, Cloudflare email address, cloudflare API key and Token.
 
