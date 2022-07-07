@@ -4,9 +4,10 @@ Credit to [weslambert](https://github.com/weslambert/velociraptor-docker) for th
 
 #### Prereqs
 1. Cloudflare account (required for Let's Encrypt Certificates and creating DNS entries)
-2. create API token with permissions Zone.Zone Settings, Zone.Zone, Zone.DNS
+2. Create wildcard(*) CNAME for the root of your domain
+3. create API token with permissions Zone.Zone Settings, Zone.Zone, Zone.DNS
    - Make sure to copy token as it is only displayed once
-3. Create API key
+4. Create API key
 
 #### Configuration:
 ##### This installs all dependacies and Docker/Docker Compose.
