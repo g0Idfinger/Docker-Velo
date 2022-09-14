@@ -11,9 +11,12 @@ Credit to [weslambert](https://github.com/weslambert/velociraptor-docker) for th
 5. Create API key
 
 #### Configuration:
+##### Clone the repo on the system that wwill host Velociraptor
+1. git clone https://github.com/g0Idfinger/Docker-Velo
+
 ##### This installs all dependancies and Docker/Docker-Compose
-1. `cd /docker-velo/scripts`
-2. run `./install.sh` # WILL PROMPT FOR SUDO PASSWORD IF NEEDED
+1. `cd /Docker-Velo/scripts`
+2. Run `./install.sh` # WILL PROMPT FOR SUDO PASSWORD IF NEEDED
 3. Script will prompt you for Domain Name, Cloudflare email address, cloudflare API key and Token.
 
 #### Create 1st and Nth Velo instance(s)
