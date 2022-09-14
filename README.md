@@ -1,5 +1,5 @@
 # velociraptor-docker
-Run [Velocidex Velociraptor](https://github.com/Velocidex/velociraptor) server with Docker and a reverse proxy(traefik), utilizing cloudflare DNS and Let's Encrypt certificates.  
+Run [Velocidex Velociraptor](https://github.com/Velocidex/velociraptor) server with Docker and a reverse proxy (Traefik), utilizing CloudFlare DNS and Let's Encrypt certificates.  
 Credit to [weslambert](https://github.com/weslambert/velociraptor-docker) for the docker image.
 
 #### Prereqs
