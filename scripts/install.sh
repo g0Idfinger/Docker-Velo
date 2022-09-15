@@ -41,13 +41,13 @@ echo "CLOUDFLARE_API_KEY=$cfapi" >> ../.env
 sudo usermod -aG docker ${USER}
 sudo chmod 666 /var/run/docker.sock
 #create folder structure
-mkdir ../appdata/traefik2/acme
+mkdir -p ../appdata/traefik2/acme
 touch ../appdata/traefik2/acme/acme.json
 chmod 600 ../appdata/traefik2/acme/acme.json
 touch ../appdata/traefik2/traefik.log
 #docker network create --gateway 192.168.90.1 --subnet 192.168.90.0/24 t2_proxy
 cd ..
-mkdir velo-staging/output/
+mkdir -p velo-staging/output/
 cd $dir
 cp docker-compose.yml.bak docker-compose.yml
 docker compose up -d
