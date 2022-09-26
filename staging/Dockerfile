@@ -1,10 +1,10 @@
 # set to ubuntu version you want to use currently set to most secure version
-FROM ubuntu:impish-20220105
+FROM ubuntu:latest
 # change version in this line to latest release when needed
-LABEL version="Velociraptor v0.6.2"
+LABEL version="Velociraptor v0.6.6"
 LABEL description="Velociraptor server in a Docker container"
 LABEL maintainer="Wes Lambert, @therealwlambert"
-ENV VERSION="0.6.2"
+ENV VERSION="0.6.6"
 COPY ./entrypoint .
 RUN chmod +x entrypoint && \
     apt-get update && \
